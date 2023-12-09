@@ -52,7 +52,7 @@ for bv in bvid:
 
 def run():
     num=0
-    while int(requests.get(proxynum).json().get("http_type", {}).get("http")) != 0:
+    while int(requests.get(proxynum).json().get("count")) != 0:
 
         resp=requests.get(getproxy).json().get("proxy")
         for data in reqdata:
