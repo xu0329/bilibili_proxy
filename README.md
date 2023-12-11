@@ -8,7 +8,7 @@
 **使用**：只需修改以下部分，运行即可  
 ![image](image/image.jpeg)
 
-**[Ven3/playcount](https://github.com/Ven3/playcount)** 包含不使用代理池功能
+
 
 
 ### 代理池
