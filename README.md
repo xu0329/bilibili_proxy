@@ -2,7 +2,7 @@
 ## [通过代理池刷播放量](bilibili_proxypool.py)
  
 
-***所需依赖***
+***所需安装依赖***
 ```python
 pip install requests
 ```
@@ -16,7 +16,7 @@ pip install requests
 
 每次运行都会去除不可用代理，添加代理可直接在末尾粘贴
 
-***所需依赖***
+***所需安装依赖***
 ```python
 pip install fake_useragent
 ```
