@@ -21,7 +21,7 @@ url = "http://api.bilibili.com/x/click-interface/click/web/h5"
 
 
 headers = {
-    'User-Agent':UserAgent().random,
+    'User-Agent':"",
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
     'Accept-Language': 'zh-CN,zh;q=0.9',
     'Accept-Encoding': 'gzip, deflate, br',
@@ -70,6 +70,7 @@ def process_lines(lines):
             for data in reqdata:
                 stime = str(int(time.time()))
                 data["stime"] = stime
+                headers["User-Agent"] = UserAgent().random
                 headers["referer"] = "http://www.bilibili.com/video/{}/".format(data.get("bvid"))
                 requests.post(url,headers=headers,data=data,proxies=proxies,timeout=2)
 
