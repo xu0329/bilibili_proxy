@@ -34,7 +34,7 @@ for bv in bvid:
     stime = str(int(time.time()))
     print("正在获取data，请耐心等待。。。")
     while True:
-        resp = requests.get("http://api.bilibili.com/x/web-interface/view?bvid={}".format(bv))
+        resp = requests.get("http://api.bilibili.com/x/web-interface/view?bvid={}".format(bv),headers=headers)
         resp_json = resp.json()
         if "data" in resp_json:
             getdata = resp_json["data"]
