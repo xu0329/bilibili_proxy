@@ -33,8 +33,13 @@ reqdata = []
 for bv in bvid:
     stime = str(int(time.time()))
     
-    resp = requests.get("https://api.bilibili.com/x/web-interface/view?bvid={}".format(bv))
-    getdata = resp.json()["data"]
+    while True:
+        resp = requests.get("http://api.bilibili.com/x/web-interface/view?bvid={}".format(bv),headers=headers)
+        resp_json = resp.json()
+        if "data" in resp_json:
+            getdata = resp_json["data"]
+            break
+        
     data= {
         'aid':getdata["aid"],
         'cid':getdata["cid"],
